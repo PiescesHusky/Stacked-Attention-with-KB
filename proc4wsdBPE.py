@@ -126,26 +126,27 @@ def Check_swap_result(filenames, fnew):
                 print('yes')
             else:
                 print(filenames[i+1], fnew[i])
-filenames = ['train.de-it.lema.de.wplmb.out', 'train.de-it.lema.it.wplmb.out', 'train.de-nl.lema.de.wplmb.out', 'train.de-nl.lema.nl.wplmb.out', 'train.de-ro.lema.de.wplmb.out', 'train.de-ro.lema.ro.wplmb.out', 'train.en-de.lema.de.wplmb.out', 'train.en-de.lema.en.wplmb.out', 'train.en-es.lema.en.wplmb.out', 'train.en-es.lema.es.wplmb.out', 'train.en-fr.lema.en.wplmb.out', 'train.en-fr.lema.fr.wplmb.out', 'train.en-it.lema.en.wplmb.out', 'train.en-it.lema.it.wplmb.out', 'train.en-nl.lema.en.wplmb.out', 'train.en-nl.lema.nl.wplmb.out', 'train.en-ro.lema.en.wplmb.out', 'train.en-ro.lema.ro.wplmb.out', 'train.it-nl.lema.it.wplmb.out', 'train.it-nl.lema.nl.wplmb.out', 'train.it-ro.lema.it.wplmb.out', 'train.it-ro.lema.ro.wplmb.out', 'train.nl-ro.lema.nl.wplmb.out', 'train.nl-ro.lema.ro.wplmb.out']
+                
 
-ori_files = ['train.de-it.lema.de.wplmb.w', 'train.de-it.lema.it.wplmb.w', 'train.de-nl.lema.de.wplmb.w', 'train.de-nl.lema.nl.wplmb.w', 'train.de-ro.lema.de.wplmb.w', 'train.de-ro.lema.ro.wplmb.w', 'train.en-de.lema.de.wplmb.w', 'train.en-de.lema.en.wplmb.w', 'train.en-es.lema.en.wplmb.w', 'train.en-es.lema.es.wplmb.w', 'train.en-fr.lema.en.wplmb.w', 'train.en-fr.lema.fr.wplmb.w', 'train.en-it.lema.en.wplmb.w', 'train.en-it.lema.it.wplmb.w', 'train.en-nl.lema.en.wplmb.w', 'train.en-nl.lema.nl.wplmb.w', 'train.en-ro.lema.en.wplmb.w', 'train.en-ro.lema.ro.wplmb.w', 'train.it-nl.lema.it.wplmb.w', 'train.it-nl.lema.nl.wplmb.w', 'train.it-ro.lema.it.wplmb.w', 'train.it-ro.lema.ro.wplmb.w', 'train.nl-ro.lema.nl.wplmb.w', 'train.nl-ro.lema.ro.wplmb.w']
-fnew = Swap(filenames)
 
-#print(fnew)
 
-ofnew = Swap(ori_files)
 
-print(ofnew)
 
+## List of WSD senses files
 tryfile = ['train.de-it.lema.de.wplmb.out', 'train.de-it.lema.it.wplmb.out', 'train.de-nl.lema.de.wplmb.out', 'train.de-nl.lema.nl.wplmb.out', 'train.de-ro.lema.de.wplmb.out', 'train.de-ro.lema.ro.wplmb.out', 'train.en-de.lema.de.wplmb.out', 'train.en-de.lema.en.wplmb.out', 'train.en-it.lema.en.wplmb.out', 'train.en-it.lema.it.wplmb.out', 'train.en-nl.lema.en.wplmb.out', 'train.en-nl.lema.nl.wplmb.out', 'train.en-ro.lema.en.wplmb.out', 'train.en-ro.lema.ro.wplmb.out', 'train.it-nl.lema.it.wplmb.out', 'train.it-nl.lema.nl.wplmb.out', 'train.it-ro.lema.it.wplmb.out', 'train.it-ro.lema.ro.wplmb.out', 'train.nl-ro.lema.nl.wplmb.out', 'train.nl-ro.lema.ro.wplmb.out']
+
+## List of original corpuses
 tryfilew = ['train.de-it.lema.de.wplmb.w', 'train.de-it.lema.it.wplmb.w', 'train.de-nl.lema.de.wplmb.w', 'train.de-nl.lema.nl.wplmb.w', 'train.de-ro.lema.de.wplmb.w', 'train.de-ro.lema.ro.wplmb.w', 'train.en-de.lema.de.wplmb.w', 'train.en-de.lema.en.wplmb.w', 'train.en-it.lema.en.wplmb.w', 'train.en-it.lema.it.wplmb.w', 'train.en-nl.lema.en.wplmb.w', 'train.en-nl.lema.nl.wplmb.w', 'train.en-ro.lema.en.wplmb.w', 'train.en-ro.lema.ro.wplmb.w', 'train.it-nl.lema.it.wplmb.w', 'train.it-nl.lema.nl.wplmb.w', 'train.it-ro.lema.it.wplmb.w', 'train.it-ro.lema.ro.wplmb.w', 'train.nl-ro.lema.nl.wplmb.w', 'train.nl-ro.lema.ro.wplmb.w']
+
+## List of BPE50 corpuses
+tryfilewBPE50 = ['train.de-it.lema.de.wplmb.w.BPE50', 'train.de-it.lema.it.wplmb.w.BPE50', 'train.de-nl.lema.de.wplmb.w.BPE50', 'train.de-nl.lema.nl.wplmb.w.BPE50', 'train.de-ro.lema.de.wplmb.w.BPE50', 'train.de-ro.lema.ro.wplmb.w.BPE50', 'train.en-de.lema.de.wplmb.w.BPE50', 'train.en-de.lema.en.wplmb.w.BPE50', 'train.en-it.lema.en.wplmb.w.BPE50', 'train.en-it.lema.it.wplmb.w.BPE50', 'train.en-nl.lema.en.wplmb.w.BPE50', 'train.en-nl.lema.nl.wplmb.w.BPE50', 'train.en-ro.lema.en.wplmb.w.BPE50', 'train.en-ro.lema.ro.wplmb.w.BPE50', 'train.it-nl.lema.it.wplmb.w.BPE50', 'train.it-nl.lema.nl.wplmb.w.BPE50', 'train.it-ro.lema.it.wplmb.w.BPE50', 'train.it-ro.lema.ro.wplmb.w.BPE50', 'train.nl-ro.lema.nl.wplmb.w.BPE50', 'train.nl-ro.lema.ro.wplmb.w.BPE50']
+
 tryfile_s = Swap(tryfile)
 tryfilew_s = Swap(tryfilew)
-tryfile_s = ['train.de-it.lema.de.wplmb.out']
-tryfilew_s = ['train.de-it.lema.de.wplmb.w.BPE35']
-with open('try4wsdBPE', 'w') as outfile:
+
+with open('train.source.wsdBPE50', 'w') as outfile:
     for i in range(len(tryfile_s)):
      #       print(fname, len(infile.readlines()))
-        outfile.writelines(ProcMa_with_orig(tryfilew_s[i], tryfile_s[i], 't'))
+        outfile.writelines(ProcMa_with_orig(tryfilewBPE50[i], tryfile[i], 't'))
 
 
