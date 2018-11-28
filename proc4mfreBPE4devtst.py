@@ -78,7 +78,7 @@ def ProcMa_with_orig(ofile, input_file, st):
             new_token.append(tokens_factored[t-deduct][1])
             
             # print(new_token)
-            new_line.append("|".join(new_token))
+            new_line.append("￨".join(new_token))
             if double_AT_found == 1:
                 deduct += 1
         new_line.append("\n")
