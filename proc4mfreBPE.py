@@ -1,17 +1,21 @@
-
+import glob
+import os
 
 def ProcMa_with_orig(ofile, input_file, st):
 
     lines = open(input_file).readlines()  ## file with senses
     olines = open(ofile).readlines()    ## file with tokens/BPE
-    name_segs = input_file.split('.')
-    langs = name_segs[1].split('-')
-    if langs[0] == name_segs[3]:
+    
+    # find out suitable target language
+    loc_segs = input_file.split('.')
+    name_segs = loc_segs[-1].split('.')
+    langs = name_segs[3].split('-')
+    if langs[0] == name_segs[4]:
         tolan = langs[1]
-    elif langs[1] == name_segs[3]:
+    elif langs[1] == name_segs[4]:
         tolan = langs[0]
 	# totag sample <2it>
-    totag = "<2"+tolan+">"+"|"+"-"
+    totag = "<2"+tolan+">"+"￨"+"-"
     print("num_lines pre", len(lines))
     new_lines = list()
     if len(olines) == len(lines):
@@ -72,7 +76,7 @@ def ProcMa_with_orig(ofile, input_file, st):
             new_token.append(tokens_factored[t-deduct][1])
             
             # print(new_token)
-            new_line.append("|".join(new_token))
+            new_line.append("￨".join(new_token))
             if double_AT_found == 1:
                 deduct += 1
         new_line.append("\n")
@@ -103,7 +107,8 @@ def Check_swap_result(filenames, fnew):
             else:
                 print(filenames[i+1], fnew[i])
                 
-
+infiles15 = glob.glob("/home/stefan/Downloads/Babel3.7/corpus/dev_tst/15mfre/dev/*source15")
+infilesbpe = glob.glob("/home/stefan/Downloads/Babel3.7/corpus/dev_tst/bpe_w/dev/*wBPE50")
 
 ## List of most-frequent-sense corpuses
 tryfile = ['train.de-it.lema.de.wplmb.source.15', 'train.de-it.lema.it.wplmb.source.15', 'train.de-nl.lema.de.wplmb.source.15', 'train.de-nl.lema.nl.wplmb.source.15', 'train.de-ro.lema.de.wplmb.source.15', 'train.de-ro.lema.ro.wplmb.source.15', 'train.en-de.lema.de.wplmb.source.15', 'train.en-de.lema.en.wplmb.source.15', 'train.en-it.lema.en.wplmb.source.15', 'train.en-it.lema.it.wplmb.source.15', 'train.en-nl.lema.en.wplmb.source.15', 'train.en-nl.lema.nl.wplmb.source.15', 'train.en-ro.lema.en.wplmb.source.15', 'train.en-ro.lema.ro.wplmb.source.15', 'train.it-nl.lema.it.wplmb.source.15', 'train.it-nl.lema.nl.wplmb.source.15', 'train.it-ro.lema.it.wplmb.source.15', 'train.it-ro.lema.ro.wplmb.source.15', 'train.nl-ro.lema.nl.wplmb.source.15', 'train.nl-ro.lema.ro.wplmb.source.15']
@@ -114,9 +119,9 @@ tryfilewBPE50 = ['train.de-it.lema.de.wplmb.w.BPE50', 'train.de-it.lema.it.wplmb
 
 
 
-with open('train.source.mfreBPE50trialde', 'w') as outfile:
-    for i in range(len(tryfilewBPE50)):
+with open('dev.source.mfreBPE50', 'w') as outfile:
+    for i in range(len(infiles15)):
      #       print(fname, len(infile.readlines()))
-        outfile.writelines(ProcMa_with_orig(tryfilewBPE50[i], tryfile[i], 's'))
+        outfile.writelines(ProcMa_with_orig(infilesbpe[i], infiles15[i], 's'))
 
 
