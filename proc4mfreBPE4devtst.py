@@ -15,7 +15,7 @@ def ProcMa_with_orig(ofile, input_file, st):
     elif langs[1] == name_segs[4]:
         tolan = langs[0]
 	# totag sample <2it>
-    totag = "<2"+tolan+">"+"|"+"-"
+    totag = "<2"+tolan+">"+"￨"+"-"
     print("num_lines pre", len(lines))
     print("num_lines bpe", len(olines))
     print(input_file, ofile)
