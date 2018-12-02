@@ -23,7 +23,7 @@ def Get_some_factors(input_file):
           #  new_token.append(factor[0])   # add word to new token
          #   new_token.append(factor[5])  # add sense to new token
           #  new_line.append("|".join(new_token))
-            new_line.append(factor[5])
+            new_line.append(factor[3])
         new_line.append("\n")
         new_lines.append(" ".join(new_line))
     return new_lines
@@ -31,7 +31,7 @@ def Get_some_factors(input_file):
 
     # open(output_file, 'w').writelines(new_lines)
     
-files = glob.glob("/home/stefan/Downloads/Babel3.7/corpus/buildBPE/wplmb.source/*.source")
+files = glob.glob("/home/stefan/Downloads/Babel3.7/corpus/buildBPE/single/*.source")
 input_files = list()
 output_files = list()
 files = sorted(files)
@@ -49,6 +49,6 @@ for file1 in files:
    ## Get_some_factors(input_files[i], output_files[i])
 
 
-with open('wplmb.multi.extract5', 'w') as outfile:
+with open('wplmb.multi.extract3deit_de', 'w') as outfile:
     for fname in files:
         outfile.writelines(Get_some_factors(fname))
