@@ -47,7 +47,7 @@ for file1 in files:
     output_files.append("".join(new_outfile))
 ## for i in range(len(input_files)):
    ## Get_some_factors(input_files[i], output_files[i])
-
+ 
 
 with open('wplmb.multi.extract3deit_de', 'w') as outfile:
     for fname in files:
